@@ -1,5 +1,5 @@
 {
-  "name": "@k44deusz/image-utils",
+  "name": "@k44deusz/image-converter",
   "version": "1.0.0",
   "description": "Kadrowanie, skalowanie i konwersja obrazów w przeglądarce, z obsługą zewnętrznego enkodera AVIF.",
   "type": "module",
@@ -25,10 +25,10 @@
   "author": "Bartosz Golat",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/K44DEUSZ/image-utils.git"
+    "url": "git+https://github.com/K44DEUSZ/image-converter.git"
   },
   "bugs": {
-    "url": "https://github.com/K44DEUSZ/image-utils/issues"
+    "url": "https://github.com/K44DEUSZ/image-converter/issues"
   },
   "scripts": {
     "build": "tsc",

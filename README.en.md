@@ -1,4 +1,4 @@
-# image-utils
+# image-converter
 
 [Wersja polska](README.md)
 
@@ -6,14 +6,14 @@ Crop and resize images, then save them as PNG, JPEG or WebP. You choose the aspe
 
 ## Usage
 
-Download the package for your chosen version from [Releases](https://github.com/K44DEUSZ/image-utils/releases), then install it in your project:
+Download the package for your chosen version from [Releases](https://github.com/K44DEUSZ/image-converter/releases), then install it in your project:
 
 ```sh
-npm install ./k44deusz-image-utils-1.0.0.tgz
+npm install ./k44deusz-image-converter-1.0.0.tgz
 ```
 
 ```ts
-import { cropRect, outputDimensions } from "@k44deusz/image-utils";
+import { cropRect, outputDimensions } from "@k44deusz/image-converter";
 
 const image = { width: 400, height: 200, zoom: 1, focusX: 0.5, focusY: 0.5 };
 cropRect(image, 1); // { x: 100, y: 0, width: 200, height: 200 }
@@ -37,7 +37,7 @@ npm run check
 npm test
 ```
 
-A successful check of changes on `main` publishes a release. If the version already exists, automation increments its patch number and commits the change. Packages are available on GitHub; an npm-registry account is not required.
+A push to `main` runs checks and tests. Releases are published separately through GitHub Actions, using the version saved in `package.json`. Automation does not change that version or overwrite an existing release. A published release updates the dependency used by the website after its checks pass.
 
 ## License
 

@@ -5,6 +5,15 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the checked version from package.json
+        type: boolean
+        default: false
+      version:
+        description: Exact version from package.json; required for publication
+        type: string
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -12,9 +21,11 @@ concurrency:
   cancel-in-progress: false
 jobs:
   library:
-    uses: K44DEUSZ/ip-utils/.github/workflows/library-release.yml@600151fffc0a4936de3e3bff8b8ec5a5b4e69b80
+    uses: K44DEUSZ/ip-calculator/.github/workflows/library-release.yml@42485043c550b1b7e0a5280d820b60954e14b3b3
     with:
-      helper_revision: 600151fffc0a4936de3e3bff8b8ec5a5b4e69b80
+      publish: ${{ github.event_name == 'workflow_dispatch' && inputs.publish }}
+      release_version: ${{ inputs.version || '' }}
+      helper_revision: 42485043c550b1b7e0a5280d820b60954e14b3b3
       app_id: ${{ vars.LIBRARY_DISPATCH_APP_ID }}
     secrets:
       app_private_key: ${{ secrets.LIBRARY_DISPATCH_APP_PRIVATE_KEY }}

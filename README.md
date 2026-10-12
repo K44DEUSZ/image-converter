@@ -1,4 +1,4 @@
-# image-utils
+# image-converter
 
 [English version](README.en.md)
 
@@ -6,14 +6,14 @@ Funkcje do kadrowania i skalowania obrazów, a potem zapisu w PNG, JPEG lub WebP
 
 ## Jak użyć
 
-Pobierz paczkę wybranego wydania z [Releases](https://github.com/K44DEUSZ/image-utils/releases), a następnie zainstaluj ją w swoim projekcie:
+Pobierz paczkę wybranego wydania z [Releases](https://github.com/K44DEUSZ/image-converter/releases), a następnie zainstaluj ją w swoim projekcie:
 
 ```sh
-npm install ./k44deusz-image-utils-1.0.0.tgz
+npm install ./k44deusz-image-converter-1.0.0.tgz
 ```
 
 ```ts
-import { cropRect, outputDimensions } from "@k44deusz/image-utils";
+import { cropRect, outputDimensions } from "@k44deusz/image-converter";
 
 const image = { width: 400, height: 200, zoom: 1, focusX: 0.5, focusY: 0.5 };
 cropRect(image, 1); // { x: 100, y: 0, width: 200, height: 200 }
@@ -37,7 +37,7 @@ npm run check
 npm test
 ```
 
-Po poprawnym sprawdzeniu zmian na `main` automat publikuje wydanie. Jeśli numer już istnieje, zwiększa ostatnią część wersji i zapisuje tę zmianę w Git. Paczki są dostępne na GitHubie; nie wymagają konta w rejestrze npm.
+Push na `main` uruchamia sprawdzenie kodu i testy. Wydanie publikuję osobno przez GitHub Actions, z numerem zapisanym w `package.json`. Automat nie zmienia tego numeru ani nie nadpisuje istniejącego wydania. Opublikowana paczka trafia do narzędzi na stronie po przejściu ich kontroli.
 
 ## Licencja
 
