@@ -12,9 +12,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   library:
-    uses: K44DEUSZ/ip-utils/.github/workflows/library-release.yml@1864cc8d726358226d56ef314168b8172b946ff8
+    uses: K44DEUSZ/ip-utils/.github/workflows/library-release.yml@600151fffc0a4936de3e3bff8b8ec5a5b4e69b80
     with:
-      helper_revision: 1864cc8d726358226d56ef314168b8172b946ff8
+      helper_revision: 600151fffc0a4936de3e3bff8b8ec5a5b4e69b80
       app_id: ${{ vars.LIBRARY_DISPATCH_APP_ID }}
     secrets:
       app_private_key: ${{ secrets.LIBRARY_DISPATCH_APP_PRIVATE_KEY }}
