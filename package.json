@@ -1,12 +1,20 @@
 {
   "name": "@k44deusz/image-converter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Kadrowanie, skalowanie i konwersja obrazów w przeglądarce, z obsługą zewnętrznego enkodera AVIF.",
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "import": "./dist/browser.js"
     }
   },
   "main": "./dist/index.js",
@@ -34,13 +42,22 @@
     "build": "tsc",
     "check": "tsc --noEmit && eslint . && prettier --check .",
     "test": "npm run build && node --test",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check:package": "npm run build && node scripts/check-package.mjs",
+    "test:browser": "npm run build && node scripts/browser-tests.mjs"
   },
   "devDependencies": {
     "@eslint/js": "9.39.5",
     "@typescript-eslint/parser": "8.71.1",
     "eslint": "9.39.5",
     "prettier": "3.9.10",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "@types/node": "20.19.43",
+    "playwright": "1.65.0"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.5"
+    }
   }
 }

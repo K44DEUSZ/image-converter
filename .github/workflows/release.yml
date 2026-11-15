@@ -21,11 +21,11 @@ concurrency:
   cancel-in-progress: false
 jobs:
   library:
-    uses: K44DEUSZ/ip-calculator/.github/workflows/library-release.yml@42485043c550b1b7e0a5280d820b60954e14b3b3
+    uses: K44DEUSZ/ip-calculator/.github/workflows/library-release.yml@eea57037dd3b990f193372f9383e6f056c141741
     with:
       publish: ${{ github.event_name == 'workflow_dispatch' && inputs.publish }}
       release_version: ${{ inputs.version || '' }}
-      helper_revision: 42485043c550b1b7e0a5280d820b60954e14b3b3
+      helper_revision: eea57037dd3b990f193372f9383e6f056c141741
       app_id: ${{ vars.LIBRARY_DISPATCH_APP_ID }}
     secrets:
       app_private_key: ${{ secrets.LIBRARY_DISPATCH_APP_PRIVATE_KEY }}
