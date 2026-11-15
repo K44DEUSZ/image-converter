@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.1 — 2026-11-15
 
 - Add dependency-free `/core` and DOM-based `/browser` entry points while preserving every root export and existing call signature.
 - Accept Blob/File sources, optional cancellation, CORS options and pixel budgets. Keep the existing default output dimension limit.

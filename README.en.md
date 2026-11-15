@@ -4,14 +4,14 @@
 
 Crop and resize images, then save them as PNG, JPEG or WebP. You choose the aspect ratio, focal point and output dimensions; the browser performs the conversion. AVIF requires a separate encoder supplied by the caller.
 
-The current changes remain at version 1.0.0 and are not a new release. The public 1.0.0 archive is not overwritten; the additions below describe the current repository source. To try them before publication, run `npm ci`, `npm run build`, `npm pack`, and install the resulting file locally. The changelog stays in the repository and is excluded from the package.
+Release 1.0.1 includes the audit fixes and preserves the existing API. The changelog stays in the repository and is excluded from the package.
 
 ## Usage
 
 Download the package for your chosen version from [Releases](https://github.com/K44DEUSZ/image-converter/releases), then install it in your project:
 
 ```sh
-npm install ./k44deusz-image-converter-1.0.0.tgz
+npm install ./k44deusz-image-converter-1.0.1.tgz
 ```
 
 ```ts
@@ -29,7 +29,7 @@ cropRect(image, 1); // { x: 100, y: 0, width: 200, height: 200 }
 
 The library does not include an AVIF encoder. Supply a function accepting `ImageData` and quality and returning an `ArrayBuffer` if you need one. My website uses the separate `@jsquash/avif` package; that dependency has its own license.
 
-## API and environment boundaries (1.0.0)
+## API and environment boundaries (1.0.1)
 
 Existing package-root imports remain supported. New subpaths separate pure operations from browser functions:
 

@@ -1,6 +1,6 @@
 {
   "name": "@k44deusz/image-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Kadrowanie, skalowanie i konwersja obrazów w przeglądarce, z obsługą zewnętrznego enkodera AVIF.",
   "type": "module",
   "exports": {
