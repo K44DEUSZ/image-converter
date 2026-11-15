@@ -4,12 +4,14 @@
 
 Funkcje do kadrowania i skalowania obrazów, a potem zapisu w PNG, JPEG lub WebP. Ustawiasz proporcje, punkt kadrowania i docelowy rozmiar; samą konwersję wykonuje przeglądarka. AVIF wymaga dostarczenia osobnego enkodera.
 
+Bieżące poprawki pozostają na wersji 1.0.0 i nie stanowią nowego wydania. Publiczna paczka 1.0.0 nie jest nadpisywana; nowe możliwości opisane poniżej dotyczą aktualnego kodu repozytorium. Aby je sprawdzić przed wydaniem, uruchom `npm ci`, `npm run build`, `npm pack` i zainstaluj uzyskany plik lokalnie. Changelog pozostaje w repozytorium i nie trafia do paczki.
+
 ## Jak użyć
 
 Pobierz paczkę wybranego wydania z [Releases](https://github.com/K44DEUSZ/image-converter/releases), a następnie zainstaluj ją w swoim projekcie:
 
 ```sh
-npm install ./k44deusz-image-converter-1.1.0.tgz
+npm install ./k44deusz-image-converter-1.0.0.tgz
 ```
 
 ```ts
@@ -27,7 +29,7 @@ cropRect(image, 1); // { x: 100, y: 0, width: 200, height: 200 }
 
 Biblioteka nie zawiera enkodera AVIF. Jeśli go potrzebujesz, przekaż funkcję przyjmującą `ImageData` oraz jakość i zwracającą `ArrayBuffer`. Na mojej stronie używany jest osobny pakiet `@jsquash/avif`; to zewnętrzna zależność, z własną licencją.
 
-## API i granice środowisk (1.1.0)
+## API i granice środowisk (1.0.0)
 
 Dotychczasowe importy z korzenia paczki nadal działają. Nowe podścieżki pozwalają oddzielić czyste obliczenia od przeglądarki:
 
